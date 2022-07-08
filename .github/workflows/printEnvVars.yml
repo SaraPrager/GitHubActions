@@ -1,0 +1,19 @@
+name: printEnvVars
+on: push
+jobs:
+  onUbuntu:
+    name: Print Env Vars on Ubuntu
+    runs_on: ubuntu-latest
+    steps:
+      -name: Checkout
+       uses: actions/checkout@v2
+      -name: Print Env Vars
+       run: env | sort
+  onWindows:
+    name: Print Env Vars on Windows
+    runs_on: windows-latest
+    steps:
+      -name: Checkout
+       uses: actions/checkout@v2
+      -name: Print Env Vars
+       run: "GitChildItem Env: | Sort-Object Name"
