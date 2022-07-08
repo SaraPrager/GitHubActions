@@ -1,0 +1,24 @@
+name: printDate
+on: push
+jobs:
+  onUbuntu:
+    name: Print Date on Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+    - run: date
+  onWindows:
+    name: Print Date on Windows
+    runs-on: windows-latest
+    steps:
+    - run: date
+  onMac:
+    name: Print Date on Mac
+    runs-on: macos-latest
+    steps:
+    - run: date
+  WithDependencies:
+    name: Print Date on Ubuntu
+    runs-on: ubuntu-latest
+    needs: [onUbuntu, onWindows, onMac]
+    steps:
+    - run: date
