@@ -16,4 +16,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Print Env Vars
-      run: "GitChildItem Env: | Sort-Object Name"
+      run: "Get-ChildItem Env: | Sort-Object Name"
